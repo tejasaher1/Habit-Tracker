@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  height: 100vh;
+  margin: 0px;
+  background-color: #f0f0f0;
+}
+
+table,th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+
+#title{
+    position: relative;
+    left: 40%;
+}
+
+/*   
+  .calendar {
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+  }
+  
+  .month {
+    text-align: center;
+    background: #7345cd;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .weekdays, .days {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .weekdays div, .days div {
+    width: 14.28%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .days div {
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .days div:hover {
+    background: #ddd;
+  }
+  
+  .days div.empty {
+    background: #f0f0f0;
+  } */

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0c608f6c6b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/viewReportCSS.css">
+    <title> Monthly Report </title>
+</head>
+<body>
+    <div>
+        <h1 id="title"> July 2024 </h1>
+        <table>
+            <tr id="days">
+                <th> </th>
+            </tr>
+
+            <% habits.forEach((habit) => { %>
+                <tr id="<%- habit.id %>">
+                    <td>
+                        <%= habit.habitNames %>
+                    </td>
+                    
+                </tr>
+            <% }) %>
+
+        </table>
+    </div>
+
+    <script>
+        const habitsData = <%- JSON.stringify(habits)  %>
+    </script>
+    <script src="/JavaScript/viewReport.js"></script>
+
+</body>
+</html>

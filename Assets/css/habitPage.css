@@ -1,0 +1,410 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, #a902cf, #7345cd, #00ceab);
+  display: flex;
+  justify-content: center;
+}
+
+
+#addHabit{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  /* left:25%; */
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* Input */
+
+.containerInput {
+  background-color: #000;
+  position: relative;
+  /* display: block; */
+  overflow: hidden;
+  margin: 0;
+  padding: 0 0 4px 0;
+  z-index: 1;
+  font-size: 25px;
+  top: 50px;
+  width: 50%;
+  height: 65px;
+  border-radius: 10px 50px;
+}
+
+.containerInput::before {
+  content: "";
+  width: 120%;
+  aspect-ratio: 1;
+  position: absolute;
+  inset: 0 0 0 0;
+  margin: auto;
+  animation: rotate6234 2.5s ease-in-out infinite;
+  z-index: -1;
+  background-image: conic-gradient(
+    from 0deg at 50% 50%,
+    #073aff00 0%,
+    #ff0000ff 25%,
+    #073aff00 25%
+  );
+}
+
+.containerInput > input {
+  position: relative;
+  left: 10px;
+  width: 1550px;
+  height: 50px;
+  font-size: inherit;
+  color: #fff;
+  border: none;
+  padding: 7px;
+  background-color: #0a0a0a;
+  outline: 20px solid #0a0a0a;
+}
+
+.containerInput > input:focus {
+  outline: none;
+}
+
+.containerInput > input:not(:placeholder-shown) {
+  outline: none;
+}
+
+.containerInput > input:not(:placeholder-shown):valid {
+  outline: 4px solid rgb(0, 255, 183);
+  border-radius: 0;
+}
+
+@keyframes rotate6234 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+  height: 60px;
+  border-radius: calc(45px / 2);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  top: 54px;
+  left: 70px;
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  font-size: 2.2em;
+  color: white;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.4em;
+  font-weight: 500;
+  transition-duration: 0.3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 175px;
+  transition-duration: 0.3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: 15px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-left: 5px;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px, 2px);
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+
+#habitBox {
+  position: absolute;
+  display: flex;
+  height: 70%;
+  width: 65%;
+  background-color: #d5def5;
+  top: 25%;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow: auto;
+}
+
+#habits {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  height: auto;
+  width: 80%;
+  background-image: linear-gradient(90deg, #9d03c0, #7345cd, #00ceab);
+  top: 15px;
+  border-radius: 10px;
+  margin: 10px auto;
+  border: 1px solid black;
+}
+
+#title {
+  position: relative;
+  height: 80%;
+  width: 40%;
+  white-space: normal; /* Allows text to wrap onto the next line */
+  overflow-wrap: break-word; /* Ensures words break to the next line if necessary */
+}
+
+
+#habitName {
+  position: relative;
+  font-family: "Courier New", Courier, monospace;
+  bottom: 10px;
+  left: 10px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+
+.radio-input {
+  position: relative;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 20px;
+  display: flex;
+  height: 10px;
+  width: 100px;
+  /* bottom: 55px; */
+  /* left: 60%; */
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.radio-input input[type="radio"] {
+  display: none;
+}
+
+.radio-input input[type="radio"] + label {
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.radio-input input[type="radio"] + label span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  line-height: 44px;
+}
+
+.statusDone {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.statusDone::after {
+  content: attr(data-comment); /* The comment to show */
+  position: absolute;
+  bottom: 150%; /* Position above the element */
+  left: 48%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  pointer-events: none; /* Prevent interaction with the statusDone */
+}
+
+.statusDone:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.statusNotDone {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.statusNotDone::after {
+  content: attr(data-comment); /* The comment to show */
+  position: absolute;
+  bottom: 150%; /* Position above the element */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  pointer-events: none; /* Prevent interaction with the statusDone */
+}
+
+.statusNotDone:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.statusNotStarted {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.statusNotStarted::after {
+  content: attr(data-comment); /* The comment to show */
+  position: absolute;
+  bottom: 150%; /* Position above the element */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  pointer-events: none; /* Prevent interaction with the statusDone */
+}
+
+.statusNotStarted:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.radio-input input[type="radio"] + label span svg {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* .radio-input input[type="radio"]#color-1 + label span {
+  background-color: #04de04;
+}
+
+.radio-input input[type="radio"]#color-2 + label span {
+  background-color: #d50000;
+}
+
+.radio-input input[type="radio"]#color-3 + label span {
+  background-color: grey;
+} */
+
+.radio-input input[type="radio"]:checked + label span svg {
+  position: relative;
+  opacity: 1;
+  bottom: 5.5px;
+}
+
+/* .radio-input:has(input[type="radio"]#color-1:checked) {
+  background-color: #04de04;
+}
+
+.radio-input:has(input[type="radio"]#color-2:checked) {
+  background-color: #d50000;
+}
+
+.radio-input:has(input[type="radio"]#color-3:checked) {
+  background-color: grey;
+} */
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  gap: 2px;
+  right: 10px;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+  gap: 0;
+}
+
+.bin-top {
+  transform-origin: bottom right;
+}
+.button:hover .bin-top {
+  transition-duration: 0.5s;
+  transform: rotate(160deg);
+}
