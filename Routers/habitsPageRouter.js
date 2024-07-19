@@ -11,5 +11,6 @@ router.post("/changeHabitStatus/:id", habitPageController.changeHabitStatus);
 
 router.post("/deleteHabit/:id", habitPageController.deleteHabit);
 
+router.post("/addingNewDate", habitPageController.addingNewDate);
 
 module.exports = router;

@@ -6,11 +6,24 @@ const habitSchema = mongoose.Schema({
         required: true
     },
 
-    status: {
-        type: String,
-        required: true,
-        enum: ['done', 'Not Done', 'Not Started']
-    }
+    // status: {
+    //     type: String,
+    //     required: true,
+    //     enum: ['done', 'Not Done', 'Not Started']
+    // }
+
+    dailyStatus: [{
+        day: {
+            type: Number,
+            required: true
+        },
+        status: {
+            type: String,
+            required: true,
+            enum: ['done', 'Not Done', 'Not Started']
+        }
+    }]
+    
 },{
     timestamps: true 
 });

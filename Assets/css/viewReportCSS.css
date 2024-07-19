@@ -2,10 +2,17 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
-  padding: 0px;
-  height: 100vh;
-  margin: 0px;
-  background-color: #f0f0f0;
+  overflow: hidden;
+  padding: 0%;
+  margin: 0%;
+  /* background-image: linear-gradient(90deg, #a902cf, #7345cd, #00ceab); */
+}
+
+
+#mainDiv{
+  position: absolute;
+  top: 10%;
+  z-index: 1;
 }
 
 table,th,
@@ -15,50 +22,111 @@ td {
   text-align: center;
 }
 
+table{
+  color: white;
+  background-image: linear-gradient(45deg, #a902cf, #7345cd, #00ceab);
+}
+
 
 #title{
     position: relative;
     left: 40%;
 }
 
-/*   
-  .calendar {
-    width: 100%;
-    max-width: 500px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background: #fff;
-  }
-  
-  .month {
-    text-align: center;
-    background: #7345cd;
-    color: white;
-    padding: 10px 0;
-  }
-  
-  .weekdays, .days {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .weekdays div, .days div {
-    width: 14.28%;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .days div {
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .days div:hover {
-    background: #ddd;
-  }
-  
-  .days div.empty {
-    background: #f0f0f0;
-  } */
+
+
+
+
+.animated-button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  /* height: 50px;
+  width: 200px; */
+  padding: 10px 40px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: greenyellow;
+  box-shadow: 0 0 0 2px greenyellow;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  left: 87%;
+  z-index: 1;
+  top: 0.7rem;
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: greenyellow;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 10px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: greenyellow;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .linkText {
+  position: relative;
+  z-index: 2;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  left: 10%;
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 10px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #212121;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
