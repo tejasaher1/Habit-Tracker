@@ -36,21 +36,23 @@
 
 
         <h1 id="title"> July 2024 </h1>
-        <table>
-            <tr id="days">
-                <th> </th>
-            </tr>
-
-            <% habits.forEach((habit) => { %>
-                <tr id="<%- habit.id %>">
-                    <td>
-                        <%= habit.habitNames %>
-                    </td>
-                    
+        <div id="tableDiv">
+            <table>
+                <tr id="days">
+                    <th> </th>
                 </tr>
-            <% }) %>
-
-        </table>
+    
+                <% habits.forEach((habit) => { %>
+                    <tr id="<%- habit.id %>">
+                        <td>
+                            <%= habit.habitNames %>
+                        </td>
+                        
+                    </tr>
+                <% }) %>
+    
+            </table>
+        </div>
     </div>
 
     <%- include('footer');%>

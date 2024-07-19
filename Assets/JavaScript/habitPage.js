@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
   deleteButtons.forEach((button) => {
     button.addEventListener("click", function () {
       // Delete habit using AJAX request
+      
       $.ajax({
         url: `/habitPage/deleteHabit/${button.id}`,
         method: "post",

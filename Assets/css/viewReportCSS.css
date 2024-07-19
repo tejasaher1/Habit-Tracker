@@ -10,9 +10,18 @@ body {
 
 
 #mainDiv{
-  position: absolute;
-  top: 10%;
+  position: relative;
+  top: 70px;
   z-index: 1;
+}
+
+#tableDiv{
+  position: relative;
+  height: 500px;
+  width: 100%;
+  overflow-y: scroll;
+  overflow: auto;
+  /* min-height: 500px; */
 }
 
 table,th,
@@ -22,19 +31,20 @@ td {
   text-align: center;
 }
 
+
 table{
+  position: relative;
+  top: 10px;
   color: white;
   background-image: linear-gradient(45deg, #a902cf, #7345cd, #00ceab);
+  border-radius: 12px;
+  
 }
-
 
 #title{
     position: relative;
-    left: 40%;
+    left: 43%;
 }
-
-
-
 
 
 .animated-button {

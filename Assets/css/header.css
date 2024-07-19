@@ -11,5 +11,13 @@ body {
     /* background-image: linear-gradient(); */
 }
 
+h1{
+  position: relative;
+  bottom: 20px;
+  left:15px;
+  color: white;
+  font-family: yesteryear, cursive;
+}
+
 
 
