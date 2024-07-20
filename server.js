@@ -5,16 +5,15 @@ const path = require("path");
 const mongoose = require("./Config/mongoose");
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.set("Views", path.join(__dirname, "Views"));
 
 app.use(express.static(path.join(__dirname, "/Assets")));
 app.use(express.urlencoded());
 
 const EnteryRouter = require("./Routers/EnteryRouter");
-app.use('/', EnteryRouter);
+app.use("/", EnteryRouter);
 
-require('dotenv').config();     // Load environment variables from .env file
-
+require("dotenv").config(); // Load environment variables from .env file
 
 app.listen(port, function (error) {
   if (error) {
