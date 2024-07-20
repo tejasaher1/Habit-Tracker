@@ -5,7 +5,7 @@ const path = require("path");
 const mongoose = require("./Config/mongoose");
 
 app.set("view engine", "ejs");
-app.set("Views", "/Views");
+app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "/Assets")));
 app.use(express.urlencoded());
