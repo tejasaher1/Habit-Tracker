@@ -13,6 +13,8 @@ app.use(express.urlencoded());
 const EnteryRouter = require("./Routers/EnteryRouter");
 app.use('/', EnteryRouter);
 
+require('dotenv').config();     // Load environment variables from .env file
+
 
 app.listen(port, function (error) {
   if (error) {
