@@ -1,6 +1,8 @@
 const habit = require("../Model/habitModel");
 
+// This controller is responsible for rendering the habitPage with all habits.
 module.exports.habitPage = (req, res) => {
+  // Find all existing habit and add them to the habitPage
   habit.find()
     .then((result) => {
       return res.render("habitPage", {
@@ -23,6 +25,7 @@ module.exports.addHabit = (req, res) => {
     dailyStatus.push({ day: day, status: "Not Started" });
   }
 
+  // Create a new habit with the provided name and the generated dailyStatus array from day 1 to todayDate
   habit.create({ habitNames: req.body.habit, dailyStatus: dailyStatus })
     .then((result) => {
       console.log("Habit added successfully");
@@ -81,7 +84,7 @@ module.exports.changeHabitStatus = async function (req, res) {
   }
 };
 
-
+// Thsi controller is used to delete a habit
 module.exports.deleteHabit = function (req, res) {
   habit
     .findByIdAndDelete(req.params.id)
@@ -95,9 +98,10 @@ module.exports.deleteHabit = function (req, res) {
 };
 
 
-
+// This controller is responsible for adding new date in dailyStatus array.
 module.exports.addingNewDate = async (req, res) => {
   try{
+    // Find the habit using req.body.id
     const habitData = await habit.findById(req.body.id);
     if (!habitData) {
       return res.status(404).json({ error: 'Habit not found' });

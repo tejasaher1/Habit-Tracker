@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   //   daysElement.appendChild(emptyDay);
   // }
 
+
+  // Adding all days in month list table
   for (let i = 1; i <= daysInMonth; i++) {
     const day = document.createElement("th");
     day.textContent = i;
@@ -35,8 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const todaysDate = date.getDate();
     for (let i = 1; i <= daysInMonth; i++) {
       if (i == todaysDate) {
+        // Check for today's date and create a new cell and append it to the table.
         const day = document.createElement("td");
         day.style.cursor = "pointer";
+        // We are doing todaysDate-1 because in array index statrt with zero.
         let status = habit.dailyStatus[todaysDate-1].status;
         console.log("The status is " + status);
         let habitStatus = status === "done" ? "done" : status === "Not Done" ? "Not Done" : "Not Started";
@@ -44,11 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
            if(habitStatus === "done"){
             //  console.log(habit._id);
             habitStatus = status === "done" ? "done" : status === "Not Done" ? "Not Done" : "Not Started";
+            // If user want to change status then send ajax request to change status.
               $.ajax({
                   url: `/Monthly_Report/changeHabitStatus/${habit._id}`,
                   method: "post",
                   data: { id: habit._id, status: "Not Done" , date: i},
                   success: function(response) {
+                    // If the response was successful then update the status accordingly in DOM.
                     console.log("Habit status changed successfully", response);
                     day.innerHTML = "";
                     day.style.backgroundColor = "red";
@@ -64,11 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
               })
            }else if(habitStatus === "Not Done"){
             habitStatus = status === "done" ? "done" : status === "Not Done" ? "Not Done" : "Not Started";
+            // If user want to change status then send ajax request to change status.
             $.ajax({
                 url: `/Monthly_Report/changeHabitStatus/${habit._id}`,
                 method: "post",
                 data: { id: habit._id, status: "Not Started" , date: i},
                 success: function(response) {
+                  // If the response was successful then update the status accordingly in DOM.
                   console.log("Habit status changed successfully", response);
                   day.innerHTML = "";
                   day.style.backgroundColor = "grey";
@@ -85,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "post",
                 data: { id: habit._id, status: "done" , date: i},
                 success: function(response) {
+                  // If the response was successful then update the status accordingly in DOM.
                   console.log("Habit status changed successfully", response);
                   day.innerHTML = "";
                   day.style.backgroundColor = "green";
@@ -100,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
            }
         });
 
-
+        // Add the efects and status to the table according to the status in DB
         if (habitStatus === "done") {
           day.style.backgroundColor = "green";
           day.innerHTML = `
@@ -118,9 +127,11 @@ document.addEventListener("DOMContentLoaded", () => {
       } 
       
       else {
+        // If the day is not today then create a new cell and append it to the table.
         if(i < todaysDate){
           const day = document.createElement("td");
           day.style.cursor = "pointer";
+          // Check the status of the habit date. 
           let status = habit.dailyStatus[i-1].status;
           console.log("The status is " + status);
           let habitStatus = status === "done" ? "done" : status === "Not Done" ? "Not Done" : "Not Started";
@@ -128,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
              if(habitStatus === "done"){
               //  console.log(habit._id);
               habitStatus = status === "done" ? "done" : status === "Not Done" ? "Not Done" : "Not Started";
+              // If user want to change status then send ajax request to change status.
                 $.ajax({
                     url: `/Monthly_Report/changeHabitStatus/${habit._id}`,
                     method: "post",
@@ -153,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   method: "post",
                   data: { id: habit._id, status: "Not Started", date: i },
                   success: function(response) {
+                    // If the response was successful then update the status accordingly in DOM.
                     console.log("Habit status changed successfully", response);
                     day.innerHTML = "";
                     day.style.backgroundColor = "grey";
@@ -169,6 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   method: "post",
                   data: { id: habit._id, status: "done", date: i },
                   success: function(response) {
+                    // If the response was successful then update the status accordingly in DOM.
                     console.log("Habit status changed successfully", response);
                     day.innerHTML = "";
                     day.style.backgroundColor = "green";
@@ -201,6 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
           habitTableRow.appendChild(day);
         }
         else{
+          // Remaining days which are not from 1 to todays date will add in table rows without any effect and listeners.
           const day = document.createElement("td");
           habitTableRow.appendChild(day);
         }

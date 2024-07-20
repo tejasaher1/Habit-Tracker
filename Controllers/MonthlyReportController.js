@@ -2,6 +2,7 @@ const habit = require("../Model/habitModel");
 
 
 module.exports.MonthlyReport = function (req, res) {
+    // Find all existing habit and add them to the habitPage
     habit.find()
     .then((result) => {
         return res.render("reportView", {
@@ -27,8 +28,6 @@ module.exports.MonthlyReport = function (req, res) {
 //       return res.status(500).json(err);
 //     }) 
 //   };
-
-
 
 
   module.exports.changeHabitStatus = async function (req, res) {
