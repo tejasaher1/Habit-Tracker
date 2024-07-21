@@ -26,15 +26,15 @@ Habit Tracker -
     	├── Assets/
     	│   ├── css/
     	│        ├── footer.css
-    	│	       └── habitPage.css
-      |        └── header.css
-      |        └── homePage.css
-      |        └── viewReportCSS.css
+            │	 └── habitPage.css
+            |        └── header.css
+            |        └── homePage.css
+            |        └── viewReportCSS.css
     	│   └── image/
-      |        └── Image-1.jpg
+            |        └── Image-1.jpg
     	│   └── JavaScript/
     	│        └── habitPage.js
-      |        └── viewReport.js
+            |        └── viewReport.js
     	│ 
     	├── Config/
     	│   ├── mongoose.js
@@ -48,17 +48,17 @@ Habit Tracker -
     	│
     	├── Routers/
     	│   ├── EnterRouter.js
-      |   └── habitsPageRouter.js
-      |   └── Monthly_Report.js
+            |   └── habitsPageRouter.js
+            |   └── Monthly_Report.js
     	│   
     	│
     	├── views/
     	│   ├── footer.ejs
-    	│   └── habitPage.ejs
-      |   └── header.ejs
-      |   └── homePage.ejs
-      |   └── reportView.ejs    
-      |
+        	│   └── habitPage.ejs
+            |   └── header.ejs
+            |   └── homePage.ejs
+            |   └── reportView.ejs    
+            |
     	│
     	├── .env
     	├── .gitignore
