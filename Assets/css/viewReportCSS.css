@@ -31,7 +31,6 @@ td {
   text-align: center;
 }
 
-
 table{
   position: relative;
   top: 10px;
@@ -44,6 +43,7 @@ table{
 #title{
     position: relative;
     left: 43%;
+    color: black;
 }
 
 
