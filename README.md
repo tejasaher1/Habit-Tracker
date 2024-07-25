@@ -2,7 +2,8 @@ Habit Tracker -
     
       A simple web application to help you track and manage your daily habits. You can add multiple habits, track each habit daily with statuses, and view your progress over a month. 
     This project provides a basic but functional habit tracker with an intuitive UI.
-    
+
+    Application URI - https://habit-tracker-m8g0.onrender.com/
     
     * Key Features of a Habit Tracker :
       1] Add Multiple Habits: Track various habits like reading a book, going to the gym, etc.
@@ -11,8 +12,8 @@ Habit Tracker -
           Not Done: The habit is not completed for the day.
           None: No action taken on the habit for the day.
       3] View Current Habits: A page to show all current habits with an add button to introduce new habits.
-      4] 30-Day View: Display each habit's status for the past 7 days, including today.
-      5] Status Toggle: Change the status of any habit for today or any of the previous 6 days.
+      4] 30-Day View: Display each habit's status for the past 30 days, including today.
+      5] Status Toggle: Change the status of any habit for today or any of the previous days.
       6] Default User: A default user is created with habits attached (no authentication required).
       7] Data Storage: All data is stored in a database.
       8] Bonus Feature: Track the longest streak and the number of days the user has completed the habit since creation.
